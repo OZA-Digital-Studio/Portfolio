@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<!-- Index: -->
+
+<!-- 1. HEADER:- Logo
+               - Annoucement
+               - Faqs + Alert
+               - Profile
+     2. GRAPHS AREA: - Title
+                     - Language and protector selections
+                     - HISTOGRAM: title + dropdwon menus + graph
+                     - LINE GRAPH: title + dropdwon menus + graph
+                     - DOUGHNUT CHART 1: title + dropdwon menus + graph + legend
+                     - DOUGHNUT CHART 2: title + dropdwon menus + graph + legend
+      3. SIDEBAR
+-->
+
+<html>
+      <head>
+        <meta content="text/html; charset=utf-8">
+        <title>Andrew's project - Freelancer.com</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+      </head>
+
+      <body onload= 'histogram(), linear(), doughnut(), doughnut2()'>
+
+        <!-- 1. HEADER: logo +  announcement + faqs + alert + profile -->
+          <div class="header">
+
+              <!-- Logo -->
+              <div class="logo-area">
+                  <img src='images/logo.png' class= 'icon' alt= 'Logo'>
+              </div>
+
+              <!-- Announcement -->
+              <div class="announcement">
+                <div class="announc-label">Announcement</div>
+                <div class="announc-text">
+                  Once Done Then It Will Appear In The Saved Dashboards Page.
+                </div>
+             </div>
+
+             <!-- Faqs and Alert -->
+             <div class="icon-container">
+                 <img  id='question-mark' src= 'images/question-sign-in-circles.png' alt= 'FAQs'>
+             </div>
+
+             <div class="icon-container">
+                  <img  id='question-mark' src= 'images/notification-bell.png' alt= 'Alert'>
+             </div>
+
+             <!-- Profile -->
+             <div class="dropdown-type1">
+               <div class="profile-img">
+                <img  id='question-mark' src= 'images/Untitled-1.png' alt= 'Profile icon'>
+               </div>
+               <div class="profile-name">
+                 Jasica Wingelton
+               </div>
+
+               <select class='dropdown-profile' for='profile'></select> 
+             </div>
+
+          </div>
+
+        <!-- 2. GRAPHS AREA -->
+            <div class="graphs-area">
+
+              <!-- Title -->
+              <div class="title">Learning Progress</div>
+
+              <!-- Language and protector selections -->
+              <div class="select-league-protector">
+                <select class="dropdown-type2" name="league" id="league" required>
+                  <option value="" disabled selected>Select league</option>
+                  <option value="league1">League 1</option>
+                  <option value="league2">League 2</option>
+                  <option value="league3">League 3</option>
+                </select>
+
+                <select class="dropdown-type2" name="protector" id="protector" required>
+                  <option value="" disabled selected>Select protector</option>
+                  <option value="protector1">Protector 1</option>
+                  <option value="protector2">Protector 2</option>
+                  <option value="protector3">Protector 3</option>
+                </select>
+              </div>
+
+              <!-- HISTOGRAM -->
+              <div class="graph-container">
+                  <!-- Graph title -->
+                  <div class="graph-title">Credit Points Gained</div>
+
+                  <!-- Dropdwon menus -->
+                  <div class="dropdowns">
+                    <select class="dropdown-type3" name="progress">
+                    <option value="" disabled selected>Overall Progress</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="daily">Daily</option>
+                  </select>
+
+                  <select class="dropdown-type3" name="year">
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                  </select>
+                  </div>
+                  
+                  <!-- Graph -->
+                  <div class="container">
+                    <canvas id="histogram" width= 680 height= 170></canvas>
+                  </div>
+              </div>
+
+              <!-- LINE GRAPH -->
+              <div class="graph-container type1">
+
+                  <!-- Title -->
+                  <div class="graph-title">Answers</div>
+
+                  <!-- Dropdown menu -->
+                  <select class="dropdown-type3" name="year">
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                  </select>
+                  
+                  <!-- Graph -->
+                  <canvas id="linear-graph" width= 680 height= 300></canvas>
+
+                  <!-- Legend -->
+                  <div class="legend-lineGraph">
+                    <div class='dotL' id="dotL1"></div>
+                    <div>correct answer</div>
+                    <div class='dotL' id="dotL2"></div>
+                    <div>wrong answer</div>
+                  </div>
+              </div>
+
+              <!-- DOUGHNUT CHART 1 -->
+              <div class="graph-container type2">
+
+                    <!-- Title -->
+                    <div class="graph-title">Points to the <br> next <span class='blue-word'> rank.</span></div>
+    
+                    <!-- Dropdown menus -->
+                    <select class="dropdown-type3" name="language">
+                      <option value="english">English</option>
+                      <option value="italian">Italian</option>
+                      <option value="portuguese">Portuguese</option>
+                    </select>
+
+                    <!-- Graph -->
+                    <canvas class="doughnut-graph" style='width: 200px;  height:300px'></canvas>
+
+                    <div class="shade-circle">Points needed</div>
+
+                    <!-- Legend -->
+                    <div class="legend-doughnut">
+
+                      <div class="dot" id="dot1"></div>
+                      <div class="credit-pt">
+                        <span style="font-weight: bold;">Credit points gained</span>
+                        <span>34344</span>
+                      </div>                   
+                      
+                      <div class="dot" id="dot2"></div>
+                      <div class="credit-pt">
+                        <span style="font-weight: bold;">Actual rank</span>
+                        <div class="credit-pt">
+                          <img src='images/icon_master.png' class= 'mentor-icon'>
+                          <span>Mentor</span></div>
+                      </div>
+                      
+                      <div class="dot" id="dot3"></div>
+                      <div class="credit-pt">
+                        <span style="font-weight: bold;">Next rank</span>
+                        <div class="credit-pt">
+                          <img src='images/icon_master.png' class= 'mentor-icon'>
+                          <span>Scholar</span></div>
+                      </div>
+                    </div>
+                </div>
+
+              <!-- DOUGHNUT CHART 2 -->
+              <div class="graph-container type3">
+
+                  <!-- Title -->
+                  <div class="graph-title">Points to the <br> next <span class='blue-word'> level.</span></div>
+  
+                  <!-- Dropdown menus -->
+                  <select class="dropdown-type3" name="language">
+                    <option value="english">English</option>
+                    <option value="italian">Italian</option>
+                    <option value="portuguese">Portuguese</option>
+                  </select>
+
+                  <!-- Graph -->
+                  <canvas class="doughnut-graph2" style='width: 200px;  height:300px'></canvas>
+
+                  <div class="shade-circle">Points Needed</div>
+
+                   <!-- Legend -->
+                   <div class="legend-doughnut">
+
+                    <div class="dot" id="dot1"></div>
+                    <div class="credit-pt">
+                      <span style="font-weight: bold;">Remaining credit points</span>
+                      <span>34344</span>
+                    </div>   
+
+                  <div class="dot" id="dot2"></div>
+                  <div class="credit-pt">
+                    <span style="font-weight: bold;">Actual level</span>
+                    <div class="credit-pt">
+                      <img src='images/icon_master.png' class= 'mentor-icon'>
+                      <span>Elementary</span></div>
+                  </div>
+                </div>
+            </div>
+          </div>             
+
+          <!-- 3. SIDEBAR -->
+            <div class="sidebar">
+               
+               <img class='sidebar-img active' src="images/img1.png">
+
+               <div class="active1">
+                 <img class='sidebar-img' src="images/img2.png">
+               </div>
+
+               <img class='sidebar-img' src="images/img3.png">
+
+               <img class='sidebar-img' src="images/img4.png">
+
+               <img class='sidebar-img' src="images/img5.png">
+
+               <img class='sidebar-img' src="images/img6.png">
+
+               <img class='sidebar-img' src="images/img7.png">
+
+               <img id='img8' class='sidebar-img active' src="images/img8.png">
+            </div>
+      </body>
+
+      <script src='script.js'></script>
+</html>
